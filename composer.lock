@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48e6716bc808e12403081028e31d6e1f",
+    "content-hash": "2b644533f3f7237e45f003e57bd2010a",
     "packages": [
         {
             "name": "brick/math",
@@ -1121,6 +1121,69 @@
                 "source": "https://github.com/inertiajs/inertia-laravel/tree/v2.0.10"
             },
             "time": "2025-09-28T21:21:36+00:00"
+        },
+        {
+            "name": "intrfce/laravel-frontend-enums",
+            "version": "v0.7.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/intrfce/laravel-frontend-enums.git",
+                "reference": "75d60ba29e5418abd23ea2a10837acf9dc653986"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/intrfce/laravel-frontend-enums/zipball/75d60ba29e5418abd23ea2a10837acf9dc653986",
+                "reference": "75d60ba29e5418abd23ea2a10837acf9dc653986",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^11.0 || ^12.0",
+                "laravel/prompts": "v0.*",
+                "php": "^8.2.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.21 || ^9.0 || ^10.0",
+                "pestphp/pest": "^2.32 || ^3.7",
+                "tightenco/duster": "^2.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "PublishEnums": "Intrfce\\LaravelFrontendEnums\\Facades\\PublishEnums"
+                    },
+                    "providers": [
+                        "Intrfce\\LaravelFrontendEnums\\LaravelFrontendEnumsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intrfce\\LaravelFrontendEnums\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dan Matthews",
+                    "email": "dan@danmatthews.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Stop using 'magic' strings/numbers in your frontend Javascript and use your actual application enums instead.",
+            "homepage": "https://github.com/intrfce/laravel-frontend-enums",
+            "keywords": [
+                "intrfce",
+                "laravel-frontend-enums"
+            ],
+            "support": {
+                "issues": "https://github.com/intrfce/laravel-frontend-enums/issues",
+                "source": "https://github.com/intrfce/laravel-frontend-enums/tree/v0.7.6"
+            },
+            "time": "2025-09-08T22:38:59+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3458,6 +3521,89 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.1"
             },
             "time": "2025-09-04T20:59:21+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "6.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "9e41247bd512b1e6c229afbc1eb528f7565ae3bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/9e41247bd512b1e6c229afbc1eb528f7565ae3bb",
+                "reference": "9e41247bd512b1e6c229afbc1eb528f7565ae3bb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^8.12|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/container": "^8.12|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/contracts": "^8.12|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/database": "^8.12|^9.0|^10.0|^11.0|^12.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/passport": "^11.0|^12.0",
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0|^10.0",
+                "phpunit/phpunit": "^9.4|^10.1|^11.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "6.x-dev",
+                    "dev-master": "6.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 8.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/6.23.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-11-03T20:16:13+00:00"
         },
         {
             "name": "symfony/clock",
