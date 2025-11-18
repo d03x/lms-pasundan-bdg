@@ -18,7 +18,7 @@ const clasess = computed(() => {
     } else if (props.state == 'warning') {
         return 'bg-yellow-50 border border-yellow-400 rounded py-1 px-3 block focus:ring-yellow-500 focus:border-yellow-500 text-gray-700';
     } else {
-        return `block rounded outline-none border border-gray-200 bg-gray-100 px-3 py-1 text-gray-700 focus:border-blue-500 focus:ring-blue-500`;
+        return `block rounded outline-none border border-gray-200 bg-gray-100 px-3 py-1 text-gray-700 focus:border-primary focus:ring-primary`;
     }
 });
 
@@ -30,13 +30,13 @@ const stateTextColor = computed(() => {
     } else if (props.state == 'warning') {
         return 'text-yellow-700';
     } else {
-        return `block rounded outline-none border border-gray-200 bg-gray-100 px-3 py-1 text-gray-700 focus:border-blue-500 focus:ring-blue-500`;
+        return `block rounded outline-none border border-gray-200 bg-gray-100 px-3 py-1 text-gray-700 focus:border-primary focus:ring-primary`;
     }
 });
 </script>
 
 <template>
-    <input :type="type" :class="cn([clasess, 'mb-0 w-full appearance-none px-2 py-2 text-sm outline-none'])"  :placeholder="props.placeholder" />
+    <input :type="type" :class="cn([clasess, 'mb-0 w-full shadow-inner rounded-input border-neutral-300 bg-transparent placeholder:text-xs appearance-none px-2 py-2 text-sm outline-none'])"  :placeholder="props.placeholder" />
     <div v-if="state && stateMessage" :class="cn([stateTextColor, 'mt-1.5 flex items-center'])">
         <svg v-if="state === 'invalid'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path

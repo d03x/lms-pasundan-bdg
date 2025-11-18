@@ -14,4 +14,8 @@ class LoginController extends Controller
     {
         return inertia("auth/login");
     }
+
+    public function cekLogin(){
+        
+    }
 }

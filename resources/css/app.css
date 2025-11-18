@@ -1,5 +1,7 @@
 @import "./fonts.css";
 @import 'tailwindcss';
 @theme inline {
+    --color-primary:var(--color-yellow-600);
+    --radius-input:var(--radius-lg);
     --font-sans: Poppins, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
