@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
-import { computed, InputHTMLAttributes } from 'vue';
-
+import { computed, InputHTMLAttributes, useModel } from 'vue';
+const modelValue = defineModel();
 const props = defineProps<
     {
-        state?: 'valid' | 'warning' | 'invalid';
+        disabled?:boolean,
+        state?: 'valid' | 'warning' | 'invalid'|"normal";
         stateMessage?: string;
         placeholder?:string,
         type?:InputHTMLAttributes['type'],
@@ -36,7 +37,7 @@ const stateTextColor = computed(() => {
 </script>
 
 <template>
-    <input :type="type" :class="cn([clasess, 'mb-0 w-full shadow-inner rounded-input border-neutral-300 bg-transparent placeholder:text-xs appearance-none px-2 py-2 text-sm outline-none'])"  :placeholder="props.placeholder" />
+    <input v-model="modelValue" :disabled="disabled" :type="type" :class="cn([clasess, 'mb-0 w-full shadow-inner rounded-input border-neutral-300 bg-transparent placeholder:text-xs appearance-none px-2 py-2 text-sm outline-none'])"  :placeholder="props.placeholder" />
     <div v-if="state && stateMessage" :class="cn([stateTextColor, 'mt-1.5 flex items-center'])">
         <svg v-if="state === 'invalid'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path

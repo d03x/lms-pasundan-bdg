@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Services\Contracts\AuthServiceInterface;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -15,7 +16,19 @@ class LoginController extends Controller
         return inertia("auth/login");
     }
 
-    public function cekLogin(){
-        
+    public function checkLogin(Request $request, AuthServiceInterface $auth)
+    {
+
+        //validation
+
+        $data = $request->validate([
+            'email' => ['email', 'required'],
+            'password' => ['required']
+        ]);
+
+        if ($data && $auth->login($data)) {
+            return to_route('portal.index');
+        }
+        return back()->withErrors(["email" => __('auth.failed')]);
     }
 }

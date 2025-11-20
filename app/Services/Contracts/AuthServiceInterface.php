@@ -4,5 +4,5 @@ namespace App\Services\Contracts;
 
 interface AuthServiceInterface
 {
-    public function test():array;
+    public function login(Array $data):bool;
 }

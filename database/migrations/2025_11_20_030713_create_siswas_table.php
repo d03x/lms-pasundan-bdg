@@ -14,15 +14,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('siswas', function (Blueprint $table) {
-            $table->string('nis', 10)->primary();
-            $table->string('nisn', 16)->unique();
-            $table->string('kelas_id');
-            $table->foreign('kelas_id')
-                ->references('kelasID')
-                ->on('kelas')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
-            $table->foreignIdFor(User::class)->constrained()->cascadeOndelete()->cascadeOnUpdate();
+            $table->string('nis', 17)->primary();
+            $table->string('nama_lengkap');
+            $table->year('angkatan')->nullable();
+            $table->enum('jenis_kelamin', ['L', 'P']);
+            $table->foreignIdFor(User::class)->unique()->constrained('users');
+            $table->foreignIdFor(Kelas::class)->constrained('kelas');
+            $table->string('agama');
             $table->timestamps();
         });
     }

@@ -9,5 +9,4 @@ class Guru extends Model
 {
     /** @use HasFactory<\Database\Factories\GuruFactory> */
     use HasFactory;
-    protected $primaryKey = 'nip';
 }
