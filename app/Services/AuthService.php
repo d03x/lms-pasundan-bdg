@@ -14,4 +14,25 @@ class AuthService implements AuthServiceInterface
     {
         return Auth::attempt($data, true);
     }
+    public function getCurrentUserRole()
+    {
+        $user = Auth::user();
+
+        if (! $user) {
+            return null;
+        }
+        if (method_exists($user, 'getRoleNames')) {
+            return $user->getRoleNames();
+        }
+
+        if (isset($user->role)) {
+            return $user->role;
+        }
+
+        if (isset($user->roles)) {
+            return $user->roles;
+        }
+
+        return null;
+    }
 }

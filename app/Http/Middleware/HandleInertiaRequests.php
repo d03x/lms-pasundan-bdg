@@ -38,11 +38,14 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         $authService = app(AuthServiceInterface::class);
+        $request->merge([
+            'role' => $authService->getCurrentUserRole(),
+        ]);
         return [
             ...parent::share($request),
             'name' => config('app.name'),
             'auth' => [
-                'role'=>null,
+                'role'=>$authService->getCurrentUserRole(),
                 'user' => $request->user(),
             ],
         ];

@@ -5,4 +5,5 @@ namespace App\Services\Contracts;
 interface AuthServiceInterface
 {
     public function login(Array $data):bool;
+    public function getCurrentUserRole();
 }
