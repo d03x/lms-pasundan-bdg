@@ -1,5 +1,5 @@
 <template>
-    <header class="lg:h-28 h-22 bg-primary">
+    <header class="lg:h-28 h-22 bg-primary-nav">
         <div class="container lg:h-28 h-22 mx-auto flex px-3 items-center">
             <div class="flex items-center space-x-2 text-white">
                 <img   class="lg:w-17 w-14 appearance-none aspect-square"  :src="Logo" alt=""></img>
@@ -13,7 +13,10 @@
             </div>
         </div>
     </header>
-  
+    <nav>
+        <a href="">Home</a>
+        <a href="">Akademik</a>
+    </nav>
 </template>
 <script setup lang="ts">
     import Logo from "@/logo/logo.png"

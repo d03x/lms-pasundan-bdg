@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import Button from '@/components/button.vue';
+import { Button } from '@/components/ui/button';
+
 </script>
 
 <template>
@@ -14,7 +15,7 @@ import Button from '@/components/button.vue';
                     <h1 class="text-lg font-semibold text-neutral-700">Administrasi Infrastruktur Jaringan (AIJ)</h1>
                     <span class="text-sm text-neutral-600">Dr. Ade Kurniawan,M.Kom</span>
                 </div>
-                <Button class="mt-4 mb-2 bg-primary2 text-black">Materi</Button>
+                <Button>Materi</Button>
             </div>
         </div>
     </div>
